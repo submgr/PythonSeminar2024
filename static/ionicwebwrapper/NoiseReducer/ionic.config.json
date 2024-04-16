@@ -1,0 +1,7 @@
+{
+  "name": "NoiseReducer",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <iframe id="myIframe"></iframe>
+    <script>
+        var urlParams = new URLSearchParams(window.location.search);
+        var server_address = urlParams.get('server_address');
+        document.getElementById('myIframe').src = "./static/?api_server=" + server_address;
+    </script>
+</body>
+</html>
