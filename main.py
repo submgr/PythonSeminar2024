@@ -1,9 +1,28 @@
+import subprocess
+
+print("\033[93mPlease Wait... Installing required packages.\nThis might take a while.\033[0m")
+
+# Command to install packages from requirements.txt
+command = ["pip", "install", "-r", "requirements.txt"]
+
+# Execute the command
+result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+
+# Check if the command was successful
+if result.returncode == 0:
+    print("\033[92mPackages installed successfully:\033[0m")
+    print(result.stdout)
+else:
+    print("\033[91mError installing packages:\033[0m")
+    print(result.stderr)
+    exit("ERROR WHILE INSTALLING PACKAGES. PLEASE CHECK THE ERROR MESSAGE ABOVE.")
+
+print("\033[92mPackages are ready. Starting server...\n\033[0m")
+
 from flask import Flask, send_from_directory, request
 from flask_cors import CORS
 from pathlib import Path
 from werkzeug.utils import secure_filename
-
-import subprocess
 
 import os
 import sys

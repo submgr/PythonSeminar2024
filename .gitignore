@@ -27,6 +27,7 @@ npm-debug.log*
 /plugins
 /www
 /uploads/*
+/venv
 
 /static/ionicwebwrapper/.vscode
 /static/ionicwebwrapper/node_modules
